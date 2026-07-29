@@ -19,7 +19,7 @@ FragColor = vec4(ourColor, 1.0);
 //we have 2 shader types: fragment and vertex. Compile each separately and them link them together in Shader.cpp
 unsigned int compileFragmentShader(){
     
-    unsigned int fragmentShader = glCreateShader(GL_VERTEX_SHADER);//compiling the shader
+    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);//compiling the shader
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
     glCompileShader(fragmentShader);
     

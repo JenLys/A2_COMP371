@@ -15,12 +15,12 @@ Pyramid::Pyramid(){
 
     //got the coordinates from Lab+online-- Possible to play around and change ratios
     float verticesPyramid[] = {
-        // positions     colours
+        // positions     colours(found online codes)
         - 0.5f, 0.0f, -0.5f,  1.0f, 0.0f, 0.0f, //#0
         0.5f, 0.0f, -0.5f,    0.0f, 1.0f, 0.0f, //#1
         0.5f, 0.0f, 0.5f,     0.0f, 0.0f, 1.0f, //#2
         - 0.5f, 0.0f, 0.5f,    1.0f, 1.0f, 0.0f, //#3
-        0.0f, 1.0f, 0.0f,     1.0f, 1.0f, 1.0f //#4
+        0.0f, 1.0f, 0.0f,     0.78f, 0.64f, 0.78f //#4
 
     };
 //Illustrating the "named" positions for each vertex of the pyramid. We will use these # for vertices
