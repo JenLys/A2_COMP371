@@ -20,7 +20,7 @@ Pyramid::Pyramid(){
         0.5f, 0.0f, -0.5f,    0.0f, 1.0f, 0.0f, //#1
         0.5f, 0.0f, 0.5f,     0.0f, 0.0f, 1.0f, //#2
         - 0.5f, 0.0f, 0.5f,    1.0f, 1.0f, 0.0f, //#3
-        0.0f, 0.7f, 0.0f,     1.0f, 1.0f, 1.0f //#4
+        0.0f, 1.0f, 0.0f,     1.0f, 1.0f, 1.0f //#4
 
     };
 //Illustrating the "named" positions for each vertex of the pyramid. We will use these # for vertices

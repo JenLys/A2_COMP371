@@ -42,7 +42,7 @@ int main(){
     //RENDERING THE SHAPES---> loop all of the triangles rendering of Pyramid
     while (!glfwWindowShouldClose(window)){
         //clear screen
-        glClearColor(0.2f, 0.3f, 0.4f, 1.0f);
+        glClearColor(0.15f, 0.15f, 0.15f, 1.0f);//dark grey
         glClear(GL_COLOR_BUFFER_BIT);
 
         shader.use();
