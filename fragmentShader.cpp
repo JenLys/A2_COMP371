@@ -16,6 +16,7 @@ FragColor = vec4(ourColor, 1.0);
 )glsl";
 
 //Lab3 code logic used for compilation of shader
+//we have 2 shader types: fragment and vertex. Compile each separately and them link them together in Shader.cpp
 unsigned int compileFragmentShader(){
     
     unsigned int fragmentShader = glCreateShader(GL_VERTEX_SHADER);//compiling the shader
