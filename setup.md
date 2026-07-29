@@ -45,6 +45,9 @@ Here is the code for tasks.json, please fill it in with your paths
                 "-I", "PATH glew-2.3.1",
                 "-I", "PATH GLM",
                 "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/VertexShader.cpp",
+"${workspaceFolder}/FragmentShader.cpp",
+"${workspaceFolder}/Pyramid.cpp",
                 ADD OTHER CPP FILES HERE AS WELL WHEN YOU CREATE THEM
                 
                 "-o", "${workspaceFolder}/main.exe",
