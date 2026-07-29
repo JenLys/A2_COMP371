@@ -1,6 +1,9 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include "Pyramid.h"
+#include "Shader.h"
+
 
 int main(){
 
@@ -31,14 +34,22 @@ int main(){
         return -1;
     }
    
+    //Construct both shader and pyramid object
+    Shader shader;
+    Pyramid pyramid;
 
-    //MAIN
+ 
+    //RENDERING THE SHAPES---> loop all of the triangles rendering of Pyramid
     while (!glfwWindowShouldClose(window)){
         //clear screen
         glClearColor(0.2f, 0.3f, 0.4f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        //RENDERING CODE FOR THE PYRAMID GOES HERE
+        shader.use();
+        //ADD TRANSFORM CALL ON SHADER HERE
+        pyramid.draw(); 
+
+    
 
         glfwSwapBuffers(window);
         glfwPollEvents();
