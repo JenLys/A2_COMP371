@@ -9,21 +9,38 @@
                 "-g",
                 "-std=c++17",
                 "-DGLEW_STATIC",
-                "-I", "C:/Program Files/glfw-3.4.bin.WIN64/include",
-                "-I", "C:/Program Files/glew-2.3.1/include",
-                "-I", "C:/Program Files/glm-master",
+                "-I",
+                "C:/Program Files/glfw-3.4.bin.WIN64/include",
+                "-I",
+                "C:/Program Files/glew-2.3.1/include",
+                "-I",
+                "C:/Program Files/glm-master",
                 "${workspaceFolder}/main.cpp",
-                "-o", "${workspaceFolder}/main.exe",
-                "-L", "C:/Program Files/glfw-3.4.bin.WIN64/lib-mingw-w64",
-                "-L", "C:/Program Files/glew-2.3.1/lib/Release/x64",
-                "-lglew32s", "-lglfw3", "-lopengl32", "-lgdi32", "-luser32"
+                "${workspaceFolder}/Shader.cpp",
+"${workspaceFolder}/VertexShader.cpp",
+"${workspaceFolder}/FragmentShader.cpp",
+"${workspaceFolder}/Pyramid.cpp",
+                "-o",
+                "${workspaceFolder}/main.exe",
+                "-L",
+                "C:/Program Files/glfw-3.4.bin.WIN64/lib-mingw-w64",
+                "-L",
+                "C:/Program Files/glew-2.3.1/lib/Release/x64",
+                "-lglew32s",
+                "-lglfw3",
+                "-lopengl32",
+                "-lgdi32",
+                "-luser32"
             ],
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "detail": "Compiles main.cpp with GLFW, GLEW (static), and GLM"
-        }
+        },
+        
     ]
 }
