@@ -1,3 +1,5 @@
+#Ignore the glew glf set up json files. Create local ones
+.vscode/
 # Prerequisites
 *.d
 
