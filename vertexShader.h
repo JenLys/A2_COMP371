@@ -1,5 +1,5 @@
 #pragma once
 
-unsigned int compileVertexShader();
+unsigned int compileVertexShader();//exporting the compilation of the shader
 
 

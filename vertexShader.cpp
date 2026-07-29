@@ -21,16 +21,16 @@ ourColor = aColor;
 //Lab3 code logic used for compilation of shader
 unsigned int compileVertexShader(){
     
-    unsigned int shader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(shader, 1, &vertexShaderSource, NULL);
-    glCompileShader(shader);
+    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);//compiling the shader
+    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    glCompileShader(vertexShader);
     
     int success;
-    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
     if (!success){
         char infoLog[512];
-        glGetShaderInfoLog(shader, 512, NULL, infoLog);
+        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
         std::cerr << "Vertex shader compile error" << infoLog << std::endl;
     }
-    return shader;
+    return vertexShader;
 }
