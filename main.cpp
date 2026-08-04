@@ -6,10 +6,30 @@
 #include "Transform.h"
 #include <glm/gtc/type_ptr.hpp>
 
-void processInput(GLFWwindow* window)
+bool isKeyPressed(GLFWwindow* window, int key)
 {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    return glfwGetKey(window, key) == GLFW_PRESS;
+}
+void processInput(GLFWwindow* window, Transform& pyramidTransform)
+{
+    if (isKeyPressed(window, GLFW_KEY_ESCAPE))
         glfwSetWindowShouldClose(window, true);
+    if (isKeyPressed(window, GLFW_KEY_W))
+        pyramidTransform.translate({0, Transform::TRANSLATION_DISTANCE, 0});
+    if (isKeyPressed(window, GLFW_KEY_S))
+        pyramidTransform.translate({0, -Transform::TRANSLATION_DISTANCE, 0});
+    if (isKeyPressed(window, GLFW_KEY_D))
+        pyramidTransform.translate({Transform::TRANSLATION_DISTANCE, 0, 0});
+    if (isKeyPressed(window, GLFW_KEY_A))
+        pyramidTransform.translate({-Transform::TRANSLATION_DISTANCE, 0, 0});
+    if (isKeyPressed(window, GLFW_KEY_Q))
+        pyramidTransform.rotateAroundZ(Transform::ROTATION_STEP_DEGREES);
+    if (isKeyPressed(window, GLFW_KEY_E))
+        pyramidTransform.rotateAroundZ(-Transform::ROTATION_STEP_DEGREES);
+    if (isKeyPressed(window, GLFW_KEY_R))
+        pyramidTransform.scaleAlongZ(Transform::SCALE_FACTOR);
+    if (isKeyPressed(window, GLFW_KEY_F))
+        pyramidTransform.scaleAlongZ(1.0f / Transform::SCALE_FACTOR);
 }
 int main(){
 
@@ -54,7 +74,7 @@ int main(){
     //RENDERING THE SHAPES---> loop all of the triangles rendering of Pyramid
     while (!glfwWindowShouldClose(window)){
 
-        processInput(window);
+        processInput(window, pyramidTransform);
         //clear screen
         glClearColor(0.15f, 0.15f, 0.15f, 1.0f);//dark grey
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
