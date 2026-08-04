@@ -6,6 +6,11 @@
 #include "Transform.h"
 #include <glm/gtc/type_ptr.hpp>
 
+void processInput(GLFWwindow* window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
 int main(){
 
     //Init GLFW
@@ -48,6 +53,8 @@ int main(){
  
     //RENDERING THE SHAPES---> loop all of the triangles rendering of Pyramid
     while (!glfwWindowShouldClose(window)){
+
+        processInput(window);
         //clear screen
         glClearColor(0.15f, 0.15f, 0.15f, 1.0f);//dark grey
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
