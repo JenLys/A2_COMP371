@@ -3,7 +3,8 @@
 #include <iostream>
 #include "Pyramid.h"
 #include "Shader.h"
-
+#include "Transform.h"
+#include <glm/gtc/type_ptr.hpp>
 
 int main(){
 
@@ -40,14 +41,10 @@ int main(){
     Shader shader;
     Pyramid pyramid;
 
-    // **putting this thing temporarily here to test out how it displays, this substitutes the Transform
-    // PLEASE REPLACE WITH CORRECT PART3 Transform. this here is just a PLACEHOLDER
-    float identity[16] = {
-    1,0,0,0,
-    0,1,0,0,
-    0,0,1,0,
-    0,0,0,1
-}; //identity matrix to keep the vertices as is,no change
+    
+    // Step 3 Transform. 
+    Transform pyramidTransform;
+    
  
     //RENDERING THE SHAPES---> loop all of the triangles rendering of Pyramid
     while (!glfwWindowShouldClose(window)){
@@ -56,7 +53,9 @@ int main(){
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         shader.use();
-        shader.setMatrix("transform", identity); //ADD TRANSFORM CALL ON SHADER HERE, this is a PLACEHOLDER rn
+        glm::mat4 transformMatrix = pyramidTransform.matrix();
+        shader.setMatrix("transform", glm::value_ptr(transformMatrix));
+ 
 
         pyramid.draw(); 
 
