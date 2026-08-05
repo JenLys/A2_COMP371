@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "C:/Program Files/glfw-3.4.bin.WIN64/include",
                 "C:/Program Files/glew-2.3.1/include",
-                "C:/Program Files/glm-master"
+                "C:/Program Files/glm-master",
+                "C:/Program Files/glm-master/glm-master"
             ],
             "defines": [
                 "GLEW_STATIC"
