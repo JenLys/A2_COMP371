@@ -13,7 +13,7 @@
                 "C:/Program Files/glfw-3.4.bin.WIN64/include",
                 "-I",
                 "C:/Program Files/glew-2.3.1/include",
-                "-I",
+                "-I", "C:/Program Files/glm-master/glm-master",
                 "C:/Program Files/glm-master",
                 "${workspaceFolder}/main.cpp",
                 "${workspaceFolder}/Shader.cpp",
@@ -34,7 +34,7 @@
             ],
             "group": {
                 "kind": "build",
-                "isDefault": false
+                "isDefault": true
             },
             "problemMatcher": [
                 "$gcc"
