@@ -12,7 +12,12 @@ layout (location = 1) in vec3 aColor;
 out vec3 ourColor;
 
 uniform mat4 transform;
+// Adding this to have a camera with a better perspective of the pyramid
+uniform mat4 view;
+uniform mat4 projection; //projection adds perspective
+
 void main(){
+// UNCOMMENT IF CAMERA gl_Position = projection * view * transform * vec4(aPos, 1.0); //view applies camera position, projection applies perspective OLD: gl_Position = transform * vec4(aPos, 1.0);
 gl_Position = transform * vec4(aPos, 1.0);
 ourColor = aColor; 
 }

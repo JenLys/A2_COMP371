@@ -5,9 +5,14 @@
 
 class Transform {
 public:
-    static constexpr float TRANSLATION_DISTANCE = 0.05f;
+    static constexpr float TRANSLATION_DISTANCE = 0.01f;
     static constexpr float ROTATION_STEP_DEGREES = 30.0f;
     static constexpr float SCALE_FACTOR = 1.1f;
+
+    //Added a getters for verifications some of them are not super visible, so the marker will help see the change
+    float zScaleValue() const { return zScale_; }
+    glm::vec3 translationValue() const { return translation_; }
+    float rotationValue() const { return rotationDegrees_; }
 
     void translate(const glm::vec3& displacement) {
         translation_ += displacement;
@@ -41,6 +46,7 @@ public:
 
         return result;
     }
+
 
 private:
     glm::vec3 translation_{0.0f, 0.0f, 0.0f};
